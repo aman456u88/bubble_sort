@@ -1,22 +1,24 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 
-void bubbleSort(int a[]) {
-  
+void optimizedbubbleSort(int a[]) {
+
   for (int i = 0; i < 5; i++) {
-   
-  
+
+    int flag = false;
     for (int j = 0; j < (5 - i - 1); j++) {
       if (a[j] > a[j + 1]) {
-      
+        flag = true;
         int temp = a[j];
         a[j] = a[j + 1];
         a[j + 1] = temp;
       }
     }
-   
+    if (flag == false) {
+      break;
+    }
   }
-  
+
 }
 
 int main() {
@@ -30,7 +32,7 @@ int main() {
     cout << myarray[i] << " ";
   }
   cout << endl;
-  bubbleSort(myarray); 
+  optimizedbubbleSort(myarray); // sorting
 
   cout << "After Sorting" << endl;
   for (int i = 0; i < 5; i++) {
